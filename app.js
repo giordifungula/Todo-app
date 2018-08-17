@@ -14,4 +14,13 @@ function changeTodo(position, text){
 	list[position] = text; 
 }
 // -- to be able to delete things
+function deleteTodo(item){
+	//delete elements in array
+	list.splice(item, 1);
+}
 // -- to display the things
+
+function displayTodo() {
+	// body...
+	console.log(list);
+}
