@@ -7,9 +7,11 @@ function addTodo(item){
 	list.push(item);
 	console.log(list); //check the list so far
 }
-addTodo('jodi');
-addTodo('james');
-addTodo('john');
+
 // -- to be able to change things
+function changeTodo(position, text){
+	//change any item in array
+	list[position] = text; 
+}
 // -- to be able to delete things
 // -- to display the things
