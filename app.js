@@ -29,7 +29,10 @@
 var TodoList = {
 	list: [], // store the list 
 	addTodo: function (item) {
-		this.list.push(item);
+		this.list.push({
+			todoList: item,// property to value being passed
+			completed: false //not yet completed
+		});
 		this.displayTodo();
 	},
 	displayTodo: function (){
@@ -47,13 +50,13 @@ var TodoList = {
 		//delete method
 		this.list.splice(item,1);
 		this.displayTodo();
-	}
-// 	function addTodo(item){
-// 	// the item passed will be added somewhere , but where ?
-// 	list.push(item);
-// 	// console.log(list); //check the list so far
+	},
+	toggleCompleted: function(tog){
+		var todo = this.list[tog];
+		todo.completed =!todo.completed;
+		this.displayTodo();
 
-// 	displayTodo();//display the Things so far
-// }
+	}
+
 
 }
