@@ -54,14 +54,7 @@ var TodoList = {
 	toggleCompleted: function(tog){
 		var todo = this.list[tog];
 		todo.completed =!todo.completed;
-
-		//loop through the list 
-
-		if (todo.completed === false) {
-			console.log( (' '), this.list[tog]);
-		} else {
-			console.log( ('x') , this.list[tog]);
-		}
+		//simply toggle the item in list
 		this.displayTodo();
 
 	}
