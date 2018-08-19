@@ -29,4 +29,7 @@ function deleteTodo(item){
 function displayTodo() {
 	// body...
 	console.log("My Todos", list);
+	if(list.length === 0){
+		console.log("your list is empty");
+	}
 }
