@@ -35,11 +35,36 @@ var TodoList = {
 		});
 		this.displayTodo();
 	},
-	displayTodo: function (){
+	toggleAll: function(){
+		var totalTodos = this.list.length; // number of things  in array
+		var completedTodos = 0;
+
+		for(var i = 0;i < totalTodos;i++){
+			if( this.list[i].completed === true)
+				completedTodos++; // if one element is added
+		}
+			
+			if(completedTodos === totalTodos)
+			// make everything false
+				for(var i = 0;i < totalTodos;i++)
+					this.list[i].completed = false;
+			for(var i = 0;i < totalTodos;i++)
+				this.list[i].completed = true;	
+			this.displayTodo();
+	},
+	displayTodo:function(){
 		if(this.list.length === 0) //empty array
 			console.log("My todos is empty");
 		else
-			console.log(" My todos ",this.list);
+			for(var i = 0;i < this.list.length;i++){
+				// go through the list and find true 
+					// if you have toggled the element
+				if(this.list[i].completed === true){
+					console.log('(x)', this.list[i].todoList);
+				}
+				console.log('( )', this.list[i].todoList);
+			}
+			//console.log(" My todos ",this.list);
 	},
 	changeTodo: function(position, newVal){
 		this.list[position].todoList = newVal;
