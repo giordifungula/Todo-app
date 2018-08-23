@@ -42,7 +42,7 @@ var TodoList = {
 			console.log(" My todos ",this.list);
 	},
 	changeTodo: function(position, newVal){
-		this.list[position] = newVal;
+		this.list[position].todoList = newVal;
 		this.displayTodo();
 		//change value
 	},
