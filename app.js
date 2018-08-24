@@ -94,17 +94,23 @@ var TodoList = {
 
 		//get number of completed todos
 		for(var i = 0;i < totalTodos;i++){
-			if(this.list[i] === true)
+			if(this.list[i].completed === true){
 				completedTodos++;
+			}
 			//add numbers that completed
 		}
 		//if everything is true make false
 		if(completedTodos === totalTodos){
-			for(var i =0;i < totalTodos;i++){
+			for(var i = 0;i < totalTodos;i++){
 				this.list[i].completed = false
 			}
-
-		}
+			
+		}else {
+			for(var i = 0;i < totalTodos;i++){
+				this.list[i].completed = true
+				}	
+			}
+		this.displayTodo();
 	}
 
 
