@@ -61,8 +61,11 @@ var TodoList = {
 					// if you have toggled the element
 				if(this.list[i].completed === true){
 					console.log('(x)', this.list[i].todoList);
-				}
+
+				} else {
 				console.log('( )', this.list[i].todoList);
+
+				}
 			}
 			//console.log(" My todos ",this.list);
 	},
@@ -81,7 +84,27 @@ var TodoList = {
 		todo.completed =!todo.completed;
 		//simply toggle the item in list
 		this.displayTodo();
+	},
+	toggleAll: function(){
+		//if everything is true, 
+		//make everything false otherwise
+		//make everything true
+		var completedTodos = 0;
+		var totalTodos = this.list.length;
 
+		//get number of completed todos
+		for(var i = 0;i < totalTodos;i++){
+			if(this.list[i] === true)
+				completedTodos++;
+			//add numbers that completed
+		}
+		//if everything is true make false
+		if(completedTodos === totalTodos){
+			for(var i =0;i < totalTodos;i++){
+				this.list[i].completed = false
+			}
+
+		}
 	}
 
 
