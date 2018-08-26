@@ -103,11 +103,15 @@ var TodoList = {
 		if(completedTodos === totalTodos){
 			for(var i = 0;i < totalTodos;i++){
 				this.list[i].completed = false
+				//if everything is true and selected
+				// make them false now
 			}
 			
 		}else {
 			for(var i = 0;i < totalTodos;i++){
 				this.list[i].completed = true
+				// if some are true and false 
+				//make all elements true
 				}	
 			}
 		this.displayTodo();
