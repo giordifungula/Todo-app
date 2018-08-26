@@ -26,6 +26,7 @@
 // 		console.log("your list is empty");
 // 	}
 // }
+
 var TodoList = {
 	list: [], // store the list 
 	addTodo: function (item) {
@@ -119,3 +120,14 @@ var TodoList = {
 
 
 }
+var displayTodos = document.getElementById("displayTodos");
+var toggleAll = document.getElementById("toggleAll");
+
+displayTodos.addEventListener('click', function(){
+//console.log("clicked bro this works");
+TodoList.displayTodo();
+//this not needed as we are outside the object
+});
+toggleAll.addEventListener('click' , function(){
+	TodoList.toggleAll();//toggle all Funciton
+})
