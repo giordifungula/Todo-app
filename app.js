@@ -30,6 +30,7 @@
 var TodoList = {
 	list: [], // store the list 
 	addTodo: function (item) {
+		//debugger;
 		this.list.push({
 			todoList: item,// property to value being passed
 			completed: false //not yet completed
@@ -54,6 +55,7 @@ var TodoList = {
 			this.displayTodo();
 	},
 	displayTodo:function(){
+		//debugger;
 		if(this.list.length === 0) //empty array
 			console.log("My todos is empty");
 		else
@@ -71,22 +73,26 @@ var TodoList = {
 			//console.log(" My todos ",this.list);
 	},
 	changeTodo: function(position, newVal){
+		//debugger;
 		this.list[position].todoList = newVal;
 		this.displayTodo();
 		//change value
 	},
 	deleteTodo: function (item){
 		//delete method
+		//debugger;
 		this.list.splice(item,1);
 		this.displayTodo();
 	},
 	toggleCompleted: function(tog){
+
 		var todo = this.list[tog];
 		todo.completed =!todo.completed;
 		//simply toggle the item in list
 		this.displayTodo();
 	},
 	toggleAll: function(){
+		debugger;
 		//if everything is true, 
 		//make everything false otherwise
 		//make everything true
