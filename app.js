@@ -101,7 +101,8 @@ var TodoList = {
 
 		//get number of completed todos
 		for(var i = 0;i < totalTodos;i++){
-			if(this.list[i].completed === true){
+			if(this.list[i].completed === true)
+			{
 				completedTodos++;
 			}
 			//add numbers that completed
@@ -136,4 +137,14 @@ TodoList.displayTodo();
 });
 toggleAll.addEventListener('click' , function(){
 	TodoList.toggleAll();//toggle all Funciton
-})
+});
+
+var handlers = {
+	//handle different events
+	displayTodos: function(){
+		TodoList.displayTodo();
+	},
+	toggleAll: function(){
+		TodoList.toggleAll();
+	}
+};
