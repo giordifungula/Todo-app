@@ -127,17 +127,17 @@ var TodoList = {
 
 
 }
-var displayTodos = document.getElementById("displayTodos");
-var toggleAll = document.getElementById("toggleAll");
+// var displayTodos = document.getElementById("displayTodos");
+// var toggleAll = document.getElementById("toggleAll");
 
-displayTodos.addEventListener('click', function(){
-//console.log("clicked bro this works");
-TodoList.displayTodo();
-//this not needed as we are outside the object
-});
-toggleAll.addEventListener('click' , function(){
-	TodoList.toggleAll();//toggle all Funciton
-});
+// displayTodos.addEventListener('click', function(){
+// //console.log("clicked bro this works");
+// TodoList.displayTodo();
+// //this not needed as we are outside the object
+// });
+// toggleAll.addEventListener('click' , function(){
+// 	TodoList.toggleAll();//toggle all Funciton
+// });
 
 var handlers = {
 	//handle different events
@@ -146,5 +146,38 @@ var handlers = {
 	},
 	toggleAll: function(){
 		TodoList.toggleAll();
+	},
+	addTodo: function() {
+		var todoTextInput = document.getElementById("addTodoText");
+		TodoList.addTodo(todoTextInput.value); //passing a dom element as parameter needs value
+		todoTextInput.value = ''; //clear box
+	},
+	changeTodo: function(){
+		//debugger;
+		var changeTodoPositionInput = document.getElementById("changeTodoPositionInput");
+		var changeTodoTextInput = document.getElementById("changeTodoTextInput");
+
+		TodoList.changeTodo(changeTodoPositionInput.value, changeTodoTextInput.value)
+
+		changeTodoPositionInput.value = ''; //resetting the value
+		changeTodoTextInput.value = '';
+	},
+	deleteTodo: function(){
+
+		var deleteTodoPosition = document.getElementById('deleteTodoPositionInput');
+		TodoList.deleteTodo(deleteTodoPosition.valueAsNumber);
+		deleteTodoPosition = ''; //clear what is stored
+	},
+	toggleCompleted: function(a){
+		// debugger;
+		var toggleCompletedVal = document.getElementById('toggleCompletedInput');
+		TodoList.toggleCompleted(toggleCompletedVal.value);
+		toggleCompletedVal = '';
 	}
+
 };
+
+var userResponse = {
+	//receive information from user
+	
+}

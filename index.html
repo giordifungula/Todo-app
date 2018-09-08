@@ -5,11 +5,28 @@
 </head>
 <body>
 	<h1>Building a TodoList App checker</h1>
-	<button id="displayTodos">Display Todos</button>
-	<button id="toggleAll">Toggle all</button>
+	
+	<button onmousedown="handlers.displayTodos()" >Display Todos</button>
+	<button onclick="handlers.toggleAll()">Toggle all</button>
+	<br>
 
-	<button onclick="handlers.displayTodos();" >Display Todos</button>
-	<button onclick="handlers.toggleAll();">Toggle all</button>
+	<button onclick="handlers.addTodo()">Add</button>
+	<input type="text" id="addTodoText">
+
+	<div>
+		<button onclick="handlers.changeTodo()">Change Todo</button>
+		<input name="" id="changeTodoPositionInput" type="number">
+		<input type="text" name="changeTodoText" id="changeTodoTextInput">
+	</div>
+
+	<div>
+		<button onclick="handlers.deleteTodo()">Delete</button>
+		<input type="number" id="deleteTodoPositionInput"name="deleteTodoPositionInput">
+	</div>
+	<div>
+		<button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+		<input type="number" id="toggleCompletedInput">
+	</div>
 
 	<script type="text/javascript" src="app.js"></script>
 	
